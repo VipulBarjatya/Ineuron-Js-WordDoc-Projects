@@ -1,0 +1,65 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background: linear-gradient(to top left, #1B98F5, #51E1ED);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.quote-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 900px;
+  height: 300px;
+  padding: 2rem 4rem;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+
+.quote-text {
+  font-size: 2.5rem;
+  margin-top: 1rem;
+}
+
+.quote-author {
+  align-self: flex-end;
+  padding-right: 3rem;
+  margin-top: 15px;
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+button {
+  width: 250px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  padding: 0.9rem 1.8rem;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  outline: none;
+  box-shadow: 0 6px 0px 2px rgba(121, 121, 121, 0.75);
+  transition: all 250ms;
+}
+
+button:hover {
+  filter: brightness(115%);
+}
+
+button:active {
+  transform: translate(0, 0.5rem);
+  box-shadow: 0 2px rgba(121, 121, 121, 0.75);
+}
