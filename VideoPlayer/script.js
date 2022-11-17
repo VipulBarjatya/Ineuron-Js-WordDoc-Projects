@@ -1,14 +1,25 @@
 const container = document.querySelector(".container"),
   mainVideo = container.querySelector("video"),
   progressBar = container.querySelector(".progress-bar"),
+  volumeBtn = container.querySelector(".volume i"),
   playPauseBtn = container.querySelector(".play-pause i"),
   skipBackward = container.querySelector(".skip-backward i"),
   skipForward = container.querySelector(".skip-forward i");
 
 mainVideo.addEventListener("timeupdate", (e) => {
   let { currentTime, duration } = e.target; //Getting current time and duration
-  let percent = (currentTime / duration) * 100;
-  progressBar.style.width = `${percent}%`;
+  let percent = (currentTime / duration) * 100; //Getting percent
+  progressBar.style.width = `${percent}%`; //Populating width with percent
+});
+
+volumeBtn.addEventListener("click", () => {
+  if (!volumeBtn.classList.contains("fa-volume-high")) {
+    mainVideo.volume = 0.5;
+    volumeBtn.classList.replace("fa-volume-xmark", "fa-volume-high");
+  } else {
+    mainVideo.volume = 0.0;
+    volumeBtn.classList.replace("fa-volume-high", "fa-volume-xmark");
+  }
 });
 
 skipBackward.addEventListener("click", () => {

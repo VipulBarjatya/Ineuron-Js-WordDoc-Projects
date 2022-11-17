@@ -52,7 +52,7 @@ body,
 .progress-area .progress-bar {
     width: 50%;
     height: 100%;
-    background-color: aqua;
+    background-color: #0075ff;
     position: relative;
 }
 
@@ -110,7 +110,7 @@ body,
 button:hover,
 button:focus,
 button:active {
-    color: aqua;
+    color: #0075ff;
 }
 
 .options button :where(i, span) {
@@ -201,7 +201,8 @@ button:active {
 }
 
 .speed-options li.active {
-    background-color: rgb(217, 217, 217);
+    background-color: #0075ff;
+    color: #efefef;
 }
 
 .container video {
