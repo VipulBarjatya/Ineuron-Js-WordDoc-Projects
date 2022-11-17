@@ -48,6 +48,14 @@ speedBtn.addEventListener("click", () => {
   speedOptions.classList.toggle("show");
 });
 
+speedOptions.querySelectorAll("li").forEach((option) => {
+  option.addEventListener("click", () => {
+    mainVideo.playbackRate = option.dataset.speed;
+    speedOptions.querySelector(".active").classList.remove("active");
+    option.classList.add("active");
+  });
+});
+
 document.addEventListener("click", (e) => {
   if (
     e.target.tagName !== "SPAN" ||

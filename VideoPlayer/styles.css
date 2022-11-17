@@ -50,7 +50,7 @@ body,
 }
 
 .progress-area .progress-bar {
-    width: 50%;
+    width: 0%;
     height: 100%;
     background-color: #0075ff;
     position: relative;
