@@ -5,6 +5,7 @@ const container = document.querySelector(".container"),
   volumeSlider = container.querySelector(".left input"),
   speedBtn = container.querySelector(".playback-speed span"),
   speedOptions = container.querySelector(".speed-options"),
+  picInPicBtn = container.querySelector(".pic-in-pic span"),
   playPauseBtn = container.querySelector(".play-pause i"),
   skipBackward = container.querySelector(".skip-backward i"),
   skipForward = container.querySelector(".skip-forward i");
@@ -63,6 +64,10 @@ document.addEventListener("click", (e) => {
   ) {
     speedOptions.classList.remove("show");
   }
+});
+
+picInPicBtn.addEventListener("click", () => {
+  mainVideo.requestPictureInPicture();
 });
 
 playPauseBtn.addEventListener("click", () => {
