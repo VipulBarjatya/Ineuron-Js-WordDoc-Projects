@@ -6,6 +6,7 @@ const container = document.querySelector(".container"),
   speedBtn = container.querySelector(".playback-speed span"),
   speedOptions = container.querySelector(".speed-options"),
   picInPicBtn = container.querySelector(".pic-in-pic span"),
+  fullscreenBtn = container.querySelector(".fullscreen i"),
   playPauseBtn = container.querySelector(".play-pause i"),
   skipBackward = container.querySelector(".skip-backward i"),
   skipForward = container.querySelector(".skip-forward i");
@@ -68,6 +69,16 @@ document.addEventListener("click", (e) => {
 
 picInPicBtn.addEventListener("click", () => {
   mainVideo.requestPictureInPicture();
+});
+
+fullscreenBtn.addEventListener("click", () => {
+  container.classList.toggle("fullscreen");
+  if (document.fullscreenElement) {
+    fullscreenBtn.classList.replace("fa-compress", "fa-expand");
+    return document.exitFullscreen();
+  }
+  fullscreenBtn.classList.replace("fa-expand", "fa-compress");
+  container.requestFullscreen();
 });
 
 playPauseBtn.addEventListener("click", () => {
