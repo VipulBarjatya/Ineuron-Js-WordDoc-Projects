@@ -2,6 +2,7 @@ const container = document.querySelector(".container"),
   mainVideo = container.querySelector("video"),
   progressBar = container.querySelector(".progress-bar"),
   volumeBtn = container.querySelector(".volume i"),
+  volumeSlider = container.querySelector(".left input"),
   playPauseBtn = container.querySelector(".play-pause i"),
   skipBackward = container.querySelector(".skip-backward i"),
   skipForward = container.querySelector(".skip-forward i");
@@ -19,6 +20,17 @@ volumeBtn.addEventListener("click", () => {
   } else {
     mainVideo.volume = 0.0;
     volumeBtn.classList.replace("fa-volume-high", "fa-volume-xmark");
+  }
+
+  volumeSlider.value = mainVideo.volume;
+});
+
+volumeSlider.addEventListener("input", (e) => {
+  mainVideo.volume = e.target.value;
+  if (mainVideo.volume === 0) {
+    volumeBtn.classList.replace("fa-volume-high", "fa-volume-xmark");
+  } else {
+    volumeBtn.classList.replace("fa-volume-xmark", "fa-volume-high");
   }
 });
 
