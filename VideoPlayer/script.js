@@ -3,6 +3,8 @@ const container = document.querySelector(".container"),
   progressBar = container.querySelector(".progress-bar"),
   volumeBtn = container.querySelector(".volume i"),
   volumeSlider = container.querySelector(".left input"),
+  speedBtn = container.querySelector(".playback-speed span"),
+  speedOptions = container.querySelector(".speed-options"),
   playPauseBtn = container.querySelector(".play-pause i"),
   skipBackward = container.querySelector(".skip-backward i"),
   skipForward = container.querySelector(".skip-forward i");
@@ -40,6 +42,19 @@ skipBackward.addEventListener("click", () => {
 
 skipForward.addEventListener("click", () => {
   mainVideo.currentTime += 5; //skips 5 secs forward
+});
+
+speedBtn.addEventListener("click", () => {
+  speedOptions.classList.toggle("show");
+});
+
+document.addEventListener("click", (e) => {
+  if (
+    e.target.tagName !== "SPAN" ||
+    e.target.className !== "material-symbols-rounded"
+  ) {
+    speedOptions.classList.remove("show");
+  }
 });
 
 playPauseBtn.addEventListener("click", () => {
