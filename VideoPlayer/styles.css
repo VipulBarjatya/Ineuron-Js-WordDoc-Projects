@@ -12,7 +12,9 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(to right top, #4B4453, #53596E, #557087, #56889A, #5DA0A6, #72B8AA);
+    background-color: gray;
+    background-image: linear-gradient(transparent 50%, rgba(255, 255, 255, .5) 50%);
+    background-size: 50px 50px;
 }
 
 body,
@@ -122,9 +124,10 @@ button:active {
     max-width: 900px;
     width: 98%;
     background: #333;
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
+    box-shadow: 10px 5px 25px #333;
 }
 
 .wrapper {

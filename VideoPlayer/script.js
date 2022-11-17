@@ -1,12 +1,22 @@
 const container = document.querySelector(".container"),
   mainVideo = container.querySelector("video"),
   progressBar = container.querySelector(".progress-bar"),
-  playPauseBtn = container.querySelector(".play-pause i");
+  playPauseBtn = container.querySelector(".play-pause i"),
+  skipBackward = container.querySelector(".skip-backward i"),
+  skipForward = container.querySelector(".skip-forward i");
 
 mainVideo.addEventListener("timeupdate", (e) => {
   let { currentTime, duration } = e.target; //Getting current time and duration
   let percent = (currentTime / duration) * 100;
   progressBar.style.width = `${percent}%`;
+});
+
+skipBackward.addEventListener("click", () => {
+  mainVideo.currentTime -= 5; //skips 5 secs backwards
+});
+
+skipForward.addEventListener("click", () => {
+  mainVideo.currentTime += 5; //skips 5 secs forward
 });
 
 playPauseBtn.addEventListener("click", () => {
