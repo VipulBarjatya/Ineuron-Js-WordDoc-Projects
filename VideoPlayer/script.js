@@ -4,6 +4,8 @@ const container = document.querySelector(".container"),
   videoTimeline = container.querySelector(".video-timeline"),
   volumeBtn = container.querySelector(".volume i"),
   volumeSlider = container.querySelector(".left input"),
+  currentVidTime = container.querySelector(".current-time"),
+  videoDuration = container.querySelector(".video-duraion"),
   speedBtn = container.querySelector(".playback-speed span"),
   speedOptions = container.querySelector(".speed-options"),
   picInPicBtn = container.querySelector(".pic-in-pic span"),
@@ -12,10 +14,26 @@ const container = document.querySelector(".container"),
   skipBackward = container.querySelector(".skip-backward i"),
   skipForward = container.querySelector(".skip-forward i");
 
+const formatTime = (time) => {
+  let seconds = Math.floor(time % 60),
+    minutes = Math.floor(time / 60) % 60,
+    hours = Math.floor(time / 3600);
+
+  seconds = seconds < 10 ? `0${seconds}` : seconds;
+  minutes = minutes < 10 ? `0${minutes}` : minutes;
+  hours = hours < 10 ? `0${hours}` : hours;
+
+  if (hours == 0) {
+    return `${minutes}:${seconds}`;
+  }
+  return `${hours}:${minutes}:${seconds}`;
+};
+
 mainVideo.addEventListener("timeupdate", (e) => {
   let { currentTime, duration } = e.target; //Getting current time and duration
   let percent = (currentTime / duration) * 100; //Getting percent
   progressBar.style.width = `${percent}%`; //Populating width with percent
+  currentVidTime.innerText = formatTime(currentTime);
 });
 
 videoTimeline.addEventListener("click", (e) => {
