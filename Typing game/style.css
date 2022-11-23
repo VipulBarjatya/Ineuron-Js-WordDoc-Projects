@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e1e1e1;
+}
+
+body,
+.textInput {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    background-color: #afafaf;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 700px;
+    max-width: 90%;
+}
+
+.timer {
+    position: absolute;
+    top: 5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #444;
+}
+
+.givenText {
+    margin-bottom: 1rem;
+}
+
+.textInput {
+    background-color: none;
+    border: 2px solid #a1a1a1;
+    outline: none;
+}
+
+.textInput:focus {
+    border-color: #444;
+}
