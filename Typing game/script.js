@@ -1,7 +1,8 @@
 const givenTextEl = document.getElementById("givenText");
 const textInputEl = document.getElementById("textInput");
-
 const randomQuote = "https://api.quotable.io/random";
+
+textInputEl.addEventListener("input", () => {});
 
 function getRandomQuote() {
   return fetch(randomQuote)

@@ -56,3 +56,13 @@ body,
 .textInput:focus {
     border-color: #444;
 }
+
+.correct {
+    color: greenyellow;
+}
+
+.incorrect {
+    background-color: rgb(255, 47, 47);
+}
+
+backfround-
