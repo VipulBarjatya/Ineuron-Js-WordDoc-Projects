@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
     background-color: cornflowerblue;
     color: #fff;
-    text-shadow: 0px 0px 5px #444;
+    text-shadow: 1px 1px 8px #444;
 }
 
 body,
@@ -42,6 +42,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: all 650ms;
+    margin: 0 .5rem;
 }
 
 button:hover {
@@ -49,6 +50,10 @@ button:hover {
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
 }
 
-.counter {
+.counter-container {
     font-size: 2rem;
+}
+
+.counter {
+    font-size: 2.5rem;
 }
