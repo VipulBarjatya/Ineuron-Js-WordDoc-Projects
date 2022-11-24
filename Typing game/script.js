@@ -41,10 +41,21 @@ async function renderNewQuote() {
     givenTextEl.appendChild(characterSpan);
   });
   textInputEl.value = null;
+  startTimer();
 }
+
+let startTime;
 
 function startTimer() {
   timerEl.innerText = 0;
+  startTime = new Date();
+  setInterval(() => {
+    timerEl.innerText = getTimerTime();
+  }, 1000);
+}
+
+function getTimerTime() {
+  return Math.floor((new Date() - startTime) / 1000);
 }
 
 renderNewQuote();
