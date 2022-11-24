@@ -1,5 +1,6 @@
 const givenTextEl = document.getElementById("givenText");
 const textInputEl = document.getElementById("textInput");
+const timerEl = document.getElementById("timer");
 const randomQuote = "https://api.quotable.io/random";
 
 textInputEl.addEventListener("input", () => {
@@ -40,6 +41,10 @@ async function renderNewQuote() {
     givenTextEl.appendChild(characterSpan);
   });
   textInputEl.value = null;
+}
+
+function startTimer() {
+  timerEl.innerText = 0;
 }
 
 renderNewQuote();
